@@ -2,6 +2,17 @@
   "name": "wa-front",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joirneto/WA-Front.git"
+  },
+  "keywords": [],
+  "author": "Joir Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joirneto/WA-Front/issues"
+  },
+  "homepage": "https://github.com/joirneto/WA-Front#readme",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

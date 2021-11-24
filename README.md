@@ -2,9 +2,9 @@
  
 Este projeto foi construído como entrega do Desafio para vaga de Front-End da WA.
 
-Uma versão online deste projeto pode ser encontrada em: https://quizgame-wa.vercel.app/.
+Uma versão online deste projeto pode ser encontrada em: https://wa-quiz-game.vercel.app/.
 
-![Preview](https://github.com/joirneto/Desafio-Front-End-WA/blob/main/public/Home.png)
+![Preview](https://github.com/joirneto/WA-Front/blob/main/public/Home.png)
 
 ## Início
 

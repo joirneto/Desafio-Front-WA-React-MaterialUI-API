@@ -13,6 +13,14 @@
     "url": "https://github.com/joirneto/WA-Front/issues"
   },
   "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "^11.6.0",
+    "@emotion/server": "latest",
+    "@emotion/styled": "^11.6.0",
+    "@fontsource/roboto": "^4.5.1",
+    "@material-ui/styles": "^4.11.4",
+    "@mui/material": "^5.1.1",
+    "@mui/styles": "^5.1.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -22,15 +30,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
     "styled-components": "^5.3.0",
-    "web-vitals": "^1.1.2",
-    "@emotion/react": "^11.6.0",
-    "@emotion/styled": "^11.6.0",
-    "@emotion/cache": "latest",
-    "@emotion/server": "latest",
-    "@fontsource/roboto": "^4.5.1",
-    "@material-ui/styles": "^4.11.4",
-    "@mui/material": "^5.1.1",
-    "@mui/styles": "^5.1.1"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

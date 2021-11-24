@@ -41,10 +41,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   },
   button: {
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(2),
+      size: "25px",
+      width: '30%',
+      marginBottom: 2
+    },
     padding: theme.spacing(2),
-    margin: '1rem',
-    fontSize: "25px",
-    width: '30%'
+    size: "25px",
+    width: '100%',
+    marginBottom: 2
   },
   correct: {
     margin: '1',

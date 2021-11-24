@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) =>({
     background: theme.palette.primary.main,
   },
   quiz:{
-    color:'#ffffff'
+    color:'#123123',
+    background:"ffffff"
   }
   
 }))
@@ -20,7 +21,7 @@ const Navbar = () => {
   <Container maxWidth='false' className={classes.root}>
     <Box>
           <Typography variant="h5" component="div">
-            <Link href="/" underline="hover" className={classes.quiz}>
+            <Link href="/" underline="hover" color='#ffffff'>
               QUIZ GAME!
             </Link>
           </Typography>   

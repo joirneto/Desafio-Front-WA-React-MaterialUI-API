@@ -19,7 +19,7 @@ npm run dev
 
 ## Construído com:
 
-Stack: React + React Router Dom + Axios - Integração com API externa + NextJS + Material UI
+Stack: React + React Router Dom + Axios + Material UI Integração com API externa 
 
 ## Author:
 

@@ -133,8 +133,10 @@ const Questions = () => {
   });
 
   const save = () => {
+    
     if (Object.keys(form).length !== questions.length) {
       setAlert(true)
+      setTimeout(alertVerify, 3000)
     } else {
       localStorage.setItem('questions', JSON.stringify(questions),);
       localStorage.setItem('questionsCorrects', JSON.stringify(questionsAnswersCorrects));
@@ -142,7 +144,7 @@ const Questions = () => {
       history.push('/report')
       setAlert(false)
     }
-    setTimeout(alertVerify, 3000)
+    
   }
 
   return (

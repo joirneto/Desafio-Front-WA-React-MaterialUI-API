@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   },
   correct: {
     margin: '1',
-    fontSize: "1.3rem",
+   
     background: '#00e676',
 
     borderRadius: '0.2rem',
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
 
   error: {
     margin: '1',
-    fontSize: "1.3rem",
+   
     background: '#f44336',
     borderRadius: '0.2rem',
 
@@ -176,8 +176,8 @@ const Report = () => {
           {questions.map((item, index) => {
             return (
               <Box key={index} name={index} className={classes.boxQuestion}>
-                <Typography component="h5">
-                  <Box key={index} name={index} sx={{ fontWeight: 'bold', m: 1, fontSize: 'h5.fontSize' }} >{`Question ${index + 1}: `} {item.question}</Box>
+                <Typography component="div">
+                  <Box key={index} name={index} sx={{ fontWeight: 'bold', m: 1, fontSize: 'h6.fontSize' }} >{`Question ${index + 1}: `} {item.question}</Box>
                 </Typography>
                 {item.answers.map((ans, index) => {
                   return (
@@ -185,7 +185,7 @@ const Report = () => {
                       <Box className={classes.boxAnswers}>
                         <Radio {...controlProps(ans, item.question)} />
                         <Typography component="h6">
-                          <Box key={index} name={index} className={questionsCorrects[item.question] === ans ? classes.correct : classes.error} >{ans}</Box>
+                          <Box sx={{ fontWeight: 'ligth', m: 1,  }} key={index} name={index} className={questionsCorrects[item.question] === ans ? classes.correct : classes.error} >{ans}</Box>
                         </Typography>
                       </Box>
                     </Container>

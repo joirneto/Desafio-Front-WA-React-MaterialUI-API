@@ -20,7 +20,15 @@ const useStyles = makeStyles((theme) => ({
   
     quiz: {
       color: theme.palette.secondary.main,
-      fontSize: '2.5rem'
+    },
+    boxCorretion: {
+      [theme.breakpoints.up('md')]:{
+   
+
+      width: '50%',
+
+      },
+      width: '100%',
     },
     titleCorretions: {
       color: theme.palette.grey[500],
@@ -141,11 +149,10 @@ const Result = ({ total, right, errors }) => {
 
 
     return (
-        <Box sx={{
-            width: '50%', boxShadow: 3, bgcolor: '#ffffff', padding: 3
+        <Box sx={ {width:{ xl: '50%', xs: '100%' }, boxShadow: 3, bgcolor: '#ffffff', padding: 3
 
-        }}>
-            <Box className={classes.quiz}>CORRECTION </Box>
+        }} classeName={classes.boxCorretion}>
+            <Box sx={{fontSize:{ xl: '2.5rem', xs: '2rem' }}} className={classes.quiz}>CORRECTION </Box>
             <Box sx={{
                 display: 'flex',
                 justifyContent: 'space-between'

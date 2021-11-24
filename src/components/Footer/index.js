@@ -22,7 +22,7 @@ const Footer = () => {
     <Container maxWidth='false' className={classes.root}>
       <Box sx={{ textAlign: 'center' }}>
         <Typography variant="h5" component="h5"className={classes.rootTyp1} >
-          &copy; quizgame-wa.vercel.app
+          &copy; wa-front.vercel.app
         </Typography>
         <Typography variant="h5" component="h5" className={classes.rootTyp2}>
         Projeto desenvolvido por:

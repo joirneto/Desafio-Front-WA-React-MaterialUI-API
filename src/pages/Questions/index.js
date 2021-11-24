@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { getQuestions } from '../../lib/apiQuestions'
 
 
-import { Radio,  Button, Box, Typography, Container } from '@mui/material';
+import { Radio, Button, Box, Typography, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Alerts from '../../components/Alert';
-import { useHistory,  useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,7 +96,7 @@ const Questions = () => {
   const { search } = useLocation();
   const query = new URLSearchParams(search);
   const num = query.get('num');
-  
+
   const alertVerify = () => {
     setAlert(false)
   }
@@ -141,7 +141,7 @@ const Questions = () => {
   return (
     <div className={classes.root}>
       <Container fixed maxWidth='false' className={classes.boxForm}>
-      
+
 
         {!success && (
           <Box className={classes.boxButtons}>
@@ -157,41 +157,43 @@ const Questions = () => {
             bgcolor: '#ffffff',
 
           }} className={classes.boxForm}>
-            
-              {questions.map((item, index) => {
-                return (
-                  <Box key={index} name={index} className={classes.boxQuestion}>
-                    <Typography component="h5">
-                      <Box sx={{ fontWeight: 'bold', m: 1, fontSize: 'h5.fontSize' }} >{`Question ${index + 1}: `} {item.question}</Box>
-                    </Typography>
-                    {item.answers.map((ans, index) => {
-                      return (
-                        <Container key={index} name={index} >
-                          <Box className={classes.boxAnswers}>
+
+            {questions.map((item, index) => {
+              return (
+                <Box key={index} name={index} className={classes.boxQuestion}>
+                  <Typography component="h5">
+                    <Box sx={{ fontWeight: 'bold', m: 1, fontSize: 'h5.fontSize' }} >{`Question ${index + 1}: `} {item.question}</Box>
+                  </Typography>
+                  {item.answers.map((ans, index) => {
+                    return (
+                      <Container key={index} name={index} >
+                        <Box className={classes.boxAnswers}>
                           <Radio {...controlProps(ans, item.question)} />
                           <Typography component="h6">
                             <Box sx={{ fontWeight: 'ligth', m: 1, fontSize: 'h6.fontSize' }} >{ans}</Box>
                           </Typography>
-                          </Box>
-                        </Container>
-                      )
-                    })}
-                  </Box>
+                        </Box>
+                      </Container>
+                    )
+                  })}
+                </Box>
 
-                )
-              })}
-            
+              )
+            })}
+
           </Box>
         )}
 
         {success && (
           <Box className={classes.boxAnswers}>
-          <Button size="large" variant="contained" className={classes.button} onClick={save} >SUBMIT ANSWERS</Button>
+            <Button size="large" variant="contained" className={classes.button} onClick={save} >SUBMIT ANSWERS</Button>
           </Box>
         )}
 
         {alert && (
-          <Alerts msg={'All questions have to be answered'} />
+          <Box className={classes.boxAnswers}>
+            <Alerts msg={'All questions have to be answered'} />
+          </Box>
         )}
 
       </Container>

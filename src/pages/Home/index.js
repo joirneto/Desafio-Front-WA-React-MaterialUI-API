@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Box, TextField, Button, Typography, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Alerts from '../../components/Alert';
-import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
     background: theme.palette.primary.main,
-
   },
   boxOne: {
     padding: theme.spacing(2),
@@ -27,21 +26,21 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   inputOne: {
-    [theme.breakpoints.up('sm')]:{
+    [theme.breakpoints.up('sm')]: {
       textAlign: 'center',
       width: '30%',
-    marginBottom: '5rem'
+      marginBottom: '5rem'
     },
     textAlign: 'center',
     width: '100%',
     marginBottom: '5rem'
   },
   button: {
-    [theme.breakpoints.up('md')]:{
+    [theme.breakpoints.up('md')]: {
       padding: theme.spacing(2),
-    size: "25px",
-    width: '30%',
-    marginBottom: 2
+      size: "25px",
+      width: '30%',
+      marginBottom: 2
     },
     padding: theme.spacing(2),
     size: "25px",
@@ -73,11 +72,10 @@ const Home = () => {
     if (num.length === 0 || isNaN(num)) {
       setAlert(true)
     } else {
-   
       history.push({
-          pathname: '/questions',
-          search: `?num=${num}`
-        }) 
+        pathname: '/questions',
+        search: `?num=${num}`
+      })
     }
   }
 
@@ -86,7 +84,6 @@ const Home = () => {
   }
 
   return (
-
     <div className={classes.root}>
       <Container fixed maxWidth='false' >
         <Box className={classes.boxOne}>
@@ -110,7 +107,6 @@ const Home = () => {
         </Box>
       </Container>
     </div>
-
   )
 }
 

@@ -3,7 +3,6 @@ import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import { makeStyles } from '@mui/styles';
 
-
 const useStyles = makeStyles((theme) => ({
     alert: {
         [theme.breakpoints.up('md')]: {
@@ -17,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         margin: 2
     }
-
 }))
 
 const Alerts = ({ msg }) => {

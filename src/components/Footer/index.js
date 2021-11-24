@@ -6,11 +6,11 @@ const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(8),
   },
-  rootTyp1: {
+  home: {
     padding: theme.spacing(1),
     textTransform: "uppercase"
   },
-  rootTyp2: {
+  autor: {
     padding: theme.spacing(1),
   }
 }))
@@ -21,11 +21,11 @@ const Footer = () => {
   return (
     <Container maxWidth='false' className={classes.root}>
       <Box sx={{ textAlign: 'center' }}>
-        <Typography variant="h6" component="div"className={classes.rootTyp1} >
+        <Typography variant="h6" component="div" className={classes.home} >
           &copy; wa-front.vercel.app
         </Typography>
-        <Typography variant="h6" component="div" className={classes.rootTyp2}>
-        Projeto desenvolvido por:
+        <Typography variant="h6" component="div" className={classes.autor}>
+          Projeto desenvolvido por:
           Joir Neto / {' '}
           <Link href="https://linkedin.com/in/joir-neto" underline="hover" color="inherit" >
             Linkedin

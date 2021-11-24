@@ -2,9 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Layout from './components/layout'
-import { CssBaseline } from "@mui/material";
+import { ThemeProvider, CssBaseline } from "@mui/material";
 import { theme } from './lib/theme'
-import { ThemeProvider } from "@mui/material";
 
 ReactDOM.render(
   <>

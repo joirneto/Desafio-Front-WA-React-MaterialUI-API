@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { getQuestions } from '../../lib/apiQuestions'
-
-
+import { useHistory, useLocation } from 'react-router-dom';
+import { getQuestions } from '../../lib/apiQuestions';
 import { Radio, Button, Box, Typography, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Alerts from '../../components/Alert';
-import { useHistory, useLocation } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,22 +13,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column',
     alignItems: 'center'
-
   },
-  boxOne: {
-    padding: theme.spacing(2),
-    marginTop: '1rem',
-    marginBottom: '1rem',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    background: '#ffffff',
-    borderRadius: '16px',
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-
   boxButtons: {
     marginLeft: 'auto',
     marginRight: 'auto',
@@ -69,26 +52,18 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     alignItems: 'center'
   },
-  typoOne: {
-    textAlign: 'center',
-  },
-  inputOne: {
-    textAlign: 'center',
-  },
   button: {
-    [theme.breakpoints.up('md')]:{
+    [theme.breakpoints.up('md')]: {
       padding: theme.spacing(2),
-    size: "25px",
-    width: '30%',
-    marginBottom: 2
+      size: "25px",
+      width: '30%',
+      marginBottom: 2
     },
     padding: theme.spacing(2),
     size: "25px",
     width: '100%',
     marginBottom: 2
   }
-
-
 }))
 
 const Questions = () => {
@@ -133,7 +108,7 @@ const Questions = () => {
   });
 
   const save = () => {
-    
+
     if (Object.keys(form).length !== questions.length) {
       setAlert(true)
       setTimeout(alertVerify, 3000)
@@ -144,14 +119,11 @@ const Questions = () => {
       history.push('/report')
       setAlert(false)
     }
-    
   }
 
   return (
     <div className={classes.root}>
       <Container fixed maxWidth='false' className={classes.boxForm}>
-
-
         {!success && (
           <Box className={classes.boxButtons}>
             <Button size="large" variant="contained" className={classes.button} onClick={onClick} >START</Button>
@@ -159,14 +131,11 @@ const Questions = () => {
             <Button href='/' size="large" variant="contained" className={classes.button}  >CANCEL</Button>
           </Box>
         )}
-
         {success && (
           <Box sx={{
             boxShadow: 2,
             bgcolor: '#ffffff',
-
           }} className={classes.boxForm}>
-
             {questions.map((item, index) => {
               return (
                 <Box key={index} name={index} className={classes.boxQuestion}>
@@ -179,34 +148,28 @@ const Questions = () => {
                         <Box className={classes.boxAnswers}>
                           <Radio {...controlProps(ans, item.question)} />
                           <Typography component="div">
-                            <Box sx={{ fontWeight: 'ligth', m: 1,  }} >{ans}</Box>
+                            <Box sx={{ fontWeight: 'ligth', m: 1, }} >{ans}</Box>
                           </Typography>
                         </Box>
                       </Container>
                     )
                   })}
                 </Box>
-
               )
             })}
-
           </Box>
         )}
-
         {success && (
           <Box className={classes.boxAnswers}>
             <Button size="large" variant="contained" className={classes.button} onClick={save} >SUBMIT ANSWERS</Button>
           </Box>
         )}
-
         {alert && (
           <Box className={classes.boxAnswers}>
             <Alerts msg={'All questions have to be answered'} />
           </Box>
         )}
-
       </Container>
-
     </div>
   )
 };

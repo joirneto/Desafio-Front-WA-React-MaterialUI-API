@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, useLocation } from 'react-router-dom';
 import { getQuestions } from '../../lib/apiQuestions';
-import { Radio, Button, Box, Typography, Container } from '@mui/material';
+import {FormControlLabel, RadioGroup, FormLabel, FormControl, Radio, Button, Box, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Alerts from '../../components/Alert';
 
@@ -99,14 +99,6 @@ const Questions = () => {
     setSuccess(true)
   }
 
-  const controlProps = (item, question) => ({
-    checked: form[question] === item,
-    onChange: onChange,
-    value: item,
-    name: question,
-    inputProps: { 'aria-label': item },
-  });
-
   const save = () => {
 
     if (Object.keys(form).length !== questions.length) {
@@ -139,21 +131,23 @@ const Questions = () => {
             {questions.map((item, index) => {
               return (
                 <Box key={index} name={index} className={classes.boxQuestion}>
-                  <Typography component="div">
-                    <Box sx={{ fontWeight: 'bold', m: 1, fontSize: 'h6.fontSize' }} >{`Question ${index + 1}: `} {item.question}</Box>
-                  </Typography>
-                  {item.answers.map((ans, index) => {
-                    return (
-                      <Container key={index} name={index} >
-                        <Box className={classes.boxAnswers}>
-                          <Radio {...controlProps(ans, item.question)} />
-                          <Typography component="div">
-                            <Box sx={{ fontWeight: 'ligth', m: 1, }} >{ans}</Box>
-                          </Typography>
-                        </Box>
-                      </Container>
-                    )
-                  })}
+                  <FormControl component="fieldset">
+                    <FormLabel sx={{ fontWeight: 'bold', m: 1, fontSize: 'h6.fontSize' }} component="legend">{`Question ${index + 1}: `} {item.question}</FormLabel>
+                    <RadioGroup
+                      aria-label={item.question}
+                      name={item.question}
+                    >
+                      {item.answers.map((ans, index) => {
+                        return (
+                          <Container key={index} name={index} >
+                            <Box className={classes.boxAnswers}>
+                            <FormControlLabel onChange={onChange} value={ans} control={<Radio />} label={ans} />
+                            </Box>
+                          </Container>
+                        )
+                      })}
+                    </RadioGroup>
+                  </FormControl>
                 </Box>
               )
             })}

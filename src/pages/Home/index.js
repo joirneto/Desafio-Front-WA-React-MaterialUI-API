@@ -27,14 +27,25 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   inputOne: {
+    [theme.breakpoints.up('sm')]:{
+      textAlign: 'center',
+      width: '30%',
+    marginBottom: '5rem'
+    },
     textAlign: 'center',
-    width: '30%',
+    width: '100%',
     marginBottom: '5rem'
   },
   button: {
-    padding: theme.spacing(2),
+    [theme.breakpoints.up('md')]:{
+      padding: theme.spacing(2),
     size: "25px",
     width: '30%',
+    marginBottom: 2
+    },
+    padding: theme.spacing(2),
+    size: "25px",
+    width: '100%',
     marginBottom: 2
   }
 }))

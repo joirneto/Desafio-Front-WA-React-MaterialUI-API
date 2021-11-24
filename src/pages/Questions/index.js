@@ -76,11 +76,18 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
   },
   button: {
+    [theme.breakpoints.up('md')]:{
+      padding: theme.spacing(2),
+    size: "25px",
+    width: '30%',
+    marginBottom: 2
+    },
     padding: theme.spacing(2),
-    margin: '1rem',
-    fontSize: "25px",
-    width: '30%'
+    size: "25px",
+    width: '100%',
+    marginBottom: 2
   }
+
 
 }))
 
@@ -161,16 +168,16 @@ const Questions = () => {
             {questions.map((item, index) => {
               return (
                 <Box key={index} name={index} className={classes.boxQuestion}>
-                  <Typography component="h5">
-                    <Box sx={{ fontWeight: 'bold', m: 1, fontSize: 'h5.fontSize' }} >{`Question ${index + 1}: `} {item.question}</Box>
+                  <Typography component="div">
+                    <Box sx={{ fontWeight: 'bold', m: 1, fontSize: 'h6.fontSize' }} >{`Question ${index + 1}: `} {item.question}</Box>
                   </Typography>
                   {item.answers.map((ans, index) => {
                     return (
                       <Container key={index} name={index} >
                         <Box className={classes.boxAnswers}>
                           <Radio {...controlProps(ans, item.question)} />
-                          <Typography component="h6">
-                            <Box sx={{ fontWeight: 'ligth', m: 1, fontSize: 'h6.fontSize' }} >{ans}</Box>
+                          <Typography component="div">
+                            <Box sx={{ fontWeight: 'ligth', m: 1,  }} >{ans}</Box>
                           </Typography>
                         </Box>
                       </Container>

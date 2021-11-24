@@ -12,6 +12,7 @@ export default function Routes(){
       <Route path='/' exact component={Home}/>
       <Route path='/questions' exact component={Questions}/>
       <Route path='/report' exact component={Report}/>
+      <Route render={() => <h1>NotFound</h1>}/>
       
     </Switch>
     </BrowserRouter>
